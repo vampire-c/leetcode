@@ -8,6 +8,22 @@ public class Solution0028 {
     }
 
     public int strStr(String haystack, String needle) {
+        int hl = haystack.length(), nl = needle.length();
+        char[] hs = haystack.toCharArray(), ns = needle.toCharArray();
+        for (int i = 0; i < hl - nl; i++) {
+            int x = i, y = 0;
+            while (y < nl && hs[x] == ns[y]) {
+                x++;
+                y++;
+            }
+            if (y == nl) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public int strStr1(String haystack, String needle) {
         int hl = haystack.length();
         int nl = needle.length();
         if (hl >= nl) {
