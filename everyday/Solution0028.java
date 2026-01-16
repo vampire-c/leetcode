@@ -11,12 +11,12 @@ public class Solution0028 {
         int hl = haystack.length(), nl = needle.length();
         char[] hs = haystack.toCharArray(), ns = needle.toCharArray();
         for (int i = 0; i < hl - nl; i++) {
-            int x = i, y = 0;
-            while (y < nl && hs[x] == ns[y]) {
-                x++;
-                y++;
+            int h = i, n = 0;
+            while (n < nl && hs[h] == ns[n]) {
+                h++;
+                n++;
             }
-            if (y == nl) {
+            if (n == nl) {
                 return i;
             }
         }
