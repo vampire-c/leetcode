@@ -2,11 +2,12 @@ package leetcode.everyday;
 
 import java.util.List;
 
-public class Solution3315 {
+public class Solution3314 {
 
     public static void main(String[] args) {
-        new Solution3315().minBitwiseArray(List.of(2, 3, 5, 7));
+        new Solution3314().minBitwiseArray(List.of(2, 3, 5, 7));
     }
+
 
     public int[] minBitwiseArray(List<Integer> nums) {
         int[] ans = new int[nums.size()];
