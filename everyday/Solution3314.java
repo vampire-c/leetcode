@@ -2,13 +2,27 @@ package leetcode.everyday;
 
 import java.util.List;
 
-public class Solution3314 {
+public class Solution3315 {
 
     public static void main(String[] args) {
-        new Solution3314().minBitwiseArray(List.of(2, 3, 5, 7));
+        new Solution3315().minBitwiseArray(List.of(2, 3, 5, 7));
     }
 
     public int[] minBitwiseArray(List<Integer> nums) {
+        int[] ans = new int[nums.size()];
+        for (int i = 0; i < nums.size(); i++) {
+            int temp = nums.get(i);
+            if (temp == 2) {
+                ans[i] = -1;
+            } else {
+                int lowbit = (temp + 1) & ~temp;
+                ans[i] = temp ^ (lowbit >> 1);
+            }
+        }
+        return ans;
+    }
+
+    public int[] minBitwiseArray2(List<Integer> nums) {
         int[] ans = new int[nums.size()];
         for (int i = 0; i < nums.size(); i++) {
             Integer temp = nums.get(i);
