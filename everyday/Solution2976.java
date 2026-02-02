@@ -1,7 +1,6 @@
 package leetcode.problems;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
 
 class Solution2976 {
 
@@ -16,36 +15,37 @@ class Solution2976 {
     }
 
     public long minimumCost(String source, String target, char[] original, char[] changed, int[] cost) {
-        long ans = 0;
-        Map<Character, Integer> map = new HashMap<>();
-        for (int i = 0; i < original.length; i++) {
-            char c = original[i];
-            if (map.containsKey(c)) {
-                if (cost[map.get(c)] > cost[i]) {
-                    map.put(c, i);
-                }
-            } else {
-                map.put(c, i);
-            }
+        final int INF = Integer.MAX_VALUE / 2;
+        int[][] dis = new int[26][26];
+        for (int i = 0; i < 26; i++) {
+            Arrays.fill(dis[i], INF);
+            dis[i][i] = 0;
         }
-        for (int i = 0; i < source.length(); i++) {
-            char c1 = source.charAt(i);
-            char c2 = target.charAt(i);
-            if (c1 != c2) {
-                Integer idx = map.get(c1);
-                if (changed[idx] == c2) {
-                    ans += cost[i];
+        for (int i = 0; i < cost.length; i++) {
+            int x = original[i] - 'a';
+            int y = changed[i] - 'a';
+            dis[x][y] = Math.min(dis[x][y], cost[i]);
+        }
+        for (int k = 0; k < 26; k++) {
+            for (int i = 0; i < 26; i++) {
+                if (dis[i][k] == INF) {
                     continue;
                 }
-                while (c1 != c2) {
-
+                for (int j = 0; j < 26; j++) {
+                    dis[i][j] = Math.min(dis[i][j], dis[i][k] + dis[k][j]);
                 }
-
-                ans += cost[idx];
-
-
             }
+        }
+
+        long ans = 0;
+        for (int i = 0; i < source.length(); i++) {
+            int d = dis[source.charAt(i) - 'a'][target.charAt(i) - 'a'];
+            if (d == INF) {
+                return -1;
+            }
+            ans += d;
         }
         return ans;
     }
+
 }
