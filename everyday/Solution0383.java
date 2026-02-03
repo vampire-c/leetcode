@@ -26,6 +26,22 @@ class Solution0383 {
 
     }
 
+    public boolean canConstruct2(String ransomNote, String magazine) {
+        if (ransomNote.length() > magazine.length()) {
+            return false;
+        }
+        int[] count = new int[(int) 'z' + 1];
+        for (char c : magazine.toCharArray()) {
+            count[c]++;
+        }
+        for (char c : ransomNote.toCharArray()) {
+            if (--count[c] < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public boolean canConstruct1(String ransomNote, String magazine) {
         if (ransomNote.length() > magazine.length()) {
             return false;
