@@ -8,11 +8,11 @@ class Solution0389 {
     }
 
     public char findTheDifference(String s, String t) {
+        return (char) (s + t).chars().reduce(0, (a, b) -> a ^ b);
+    }
+    public char findTheDifference3(String s, String t) {
         int ans = 0;
-        for (char c : t.toCharArray()) {
-            ans ^= c;
-        }
-        for (char c : s.toCharArray()) {
+        for (char c : (s+t).toCharArray()) {
             ans ^= c;
         }
         return (char) ans;
