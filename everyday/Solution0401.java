@@ -1,0 +1,36 @@
+package leetcode.problems;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution0401 {
+
+    static void main(String[] args) {
+        new Solution0401().readBinaryWatch(1);
+    }
+
+    public List<String> readBinaryWatch(int turnedOn) {
+        List<String> ans = new ArrayList<>();
+        for (int i = 0; i < 1024; i++) {
+            int h = i >> 6;
+            int m = 1 & 63;
+            if (h < 12 && m < 60 && Integer.bitCount(i) == turnedOn) {
+                ans.add(String.format("%d:%02d", h, m));
+            }
+        }
+        return ans;
+    }
+
+    public List<String> readBinaryWatch2(int turnedOn) {
+        List<String> ans = new ArrayList<>();
+        for (int h = 0; h < 12; h++) {
+            for (int m = 0; m < 60; m++) {
+                if (Integer.bitCount(h) + Integer.bitCount(m) == turnedOn) {
+                    ans.add(String.format("%d:%02d", h, m));
+                }
+            }
+        }
+        return ans;
+    }
+
+}
