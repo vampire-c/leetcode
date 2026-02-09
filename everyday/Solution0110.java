@@ -1,4 +1,4 @@
-package leetcode.everyday;
+package leetcode.problems;
 
 import leetcode.TreeNode;
 
