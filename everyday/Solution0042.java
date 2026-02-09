@@ -1,4 +1,4 @@
-package leetcode.everyday;
+package leetcode.problems;
 
 class Solution0042 {
 
