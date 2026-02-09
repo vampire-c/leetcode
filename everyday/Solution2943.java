@@ -1,4 +1,4 @@
-package leetcode.everyday;
+package leetcode.problems;
 
 import java.util.Arrays;
 import java.util.HashSet;
