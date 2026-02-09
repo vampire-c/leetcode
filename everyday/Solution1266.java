@@ -1,4 +1,4 @@
-package leetcode.everyday;
+package leetcode.problems;
 
 class Solution1266 {
     public int minTimeToVisitAllPoints(int[][] points) {
