@@ -16,18 +16,20 @@ import leetcode.TreeNode;
  *         this.right = right;
  *     }
  * }
+ *
+ * 给定一个二叉树，判断它是否是 平衡二叉树(平衡二叉树 是指该树所有节点的左右子树的高度相差不超过 1。)
  */
-class Solution0110 {
+public class Solution0110 {
     public static void main(String[] args) {
-        new Solution0110().isBalanced(
+        TreeNode treeNode =
                 new TreeNode(3,
                         new TreeNode(9),
                         new TreeNode(20,
                                 new TreeNode(15),
                                 new TreeNode(7)
                         )
-                )
-        );
+                );
+        new Solution0110().isBalanced(treeNode);
     }
 
 
