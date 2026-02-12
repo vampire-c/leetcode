@@ -1,5 +1,8 @@
 package leetcode.problems;
 
+/*
+颠倒给定的 32 位有符号整数的二进制位。
+ */
 class Solution0190 {
 
     static void main(String[] args) {
