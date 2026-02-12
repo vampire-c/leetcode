@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/*
+给你一个非空数组，返回此数组中 第三大的数 。如果不存在，则返回数组中最大的数。
+ */
 class Solution0414 {
     static void main(String[] args) {
         new Solution0414().thirdMax(new int[]{2, 3, 1, 1, 3});
