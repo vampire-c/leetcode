@@ -2,6 +2,9 @@ package leetcode.problems;
 
 import java.util.Arrays;
 
+/*
+给定一个非空的字符串 s ，检查是否可以通过由它的一个子串重复多次构成。
+ */
 class Solution0459 {
 
     static void main(String[] args) {
