@@ -1,5 +1,8 @@
 package leetcode.problems;
 
+/*
+给定一个二进制数组 nums ， 计算其中最大连续 1 的个数。
+ */
 class Solution0485 {
 
     static void main(String[] args) {
