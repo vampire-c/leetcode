@@ -19,6 +19,7 @@ import java.util.List;
  *         this.right = right;
  *     }
  * }
+给你二叉树的根节点 root ，返回它节点值的 前序 遍历。
  */
 class Solution0144 {
 
