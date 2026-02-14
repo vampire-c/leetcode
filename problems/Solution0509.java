@@ -18,9 +18,8 @@ class Solution0509 {
         F(n)=F(n−1)+F(n−2)
         特征方程: f(x)=x^2-x-1
         x1=(1+sqrt(5))/2 , x2=(1-sqrt(5))/2
-
+        f(n)=1/sqrt(5)[((1+sqrt(5))/2)^n-((1-sqrt(5))/2)^n]
          */
-
         double sqrt5 = Math.sqrt(5);
         double fibN = Math.pow((1 + sqrt5) / 2, n) - Math.pow((1 - sqrt5) / 2, n);
         return (int) Math.round(fibN / sqrt5);
