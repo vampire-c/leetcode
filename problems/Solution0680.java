@@ -14,8 +14,9 @@ class Solution0680 {
 
     public boolean validPalindrome(String s) {
         int left = 0, right = s.length() - 1;
+        char[] ca = s.toCharArray();
         while (left < right) {
-            if (s.charAt(left) != s.charAt(right)) {
+            if (ca[left] != ca[right]) {
                 return isPalindrome(s, left + 1, right) || isPalindrome(s, left, right - 1);
             }
             left++;
@@ -25,8 +26,9 @@ class Solution0680 {
     }
 
     private boolean isPalindrome(String s, int left, int right) {
+        char[] ca = s.toCharArray();
         while (left < right) {
-            if (s.charAt(left) != s.charAt(right)) {
+            if (ca[left] != ca[right]) {
                 return false;
             }
             left++;
