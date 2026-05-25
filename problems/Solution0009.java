@@ -1,14 +1,28 @@
 package leetcode.problems;
 
-public class Solution0009 {
+/*
+给你一个整数 x ，如果 x 是一个回文整数，返回 true ；否则，返回 false 。
+回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
+例如，121 是回文，而 123 不是。
+ */
+class Solution0009 {
 
     public static void main(String[] args) {
-        new Solution0009().isPalindrome(121);
+        new Solution0009().isPalindrome1(121);
+    }
+
+    public boolean isPalindrome1(int x) {
+        String s = String.valueOf(x);
+        String str = new StringBuilder(s).reverse().toString();
+        return s.equals(str);
     }
 
     public boolean isPalindrome(int x) {
-        if (x == 0) return true;
-        else if (x < 0 || x % 10 == 0) return false;
+        if (x == 0) {
+            return true;
+        } else if (x < 0 || x % 10 == 0) {
+            return false;
+        }
         int temp = x;
         int ans = 0;
         while (temp > 0) {
